@@ -2,6 +2,7 @@
 # Date 2019-01-09
 # BOJ 2448
 # Divide And Conquer Algorithm
+# https://www.acmicpc.net/problem/2448
 import math
 
 
