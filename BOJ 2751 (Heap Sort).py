@@ -19,6 +19,7 @@ def heapify(idx):
         heapify(big_elements)
 
 
+
 for i in range (0, N):
     complete_binary_tree.append(int(sys.stdin.readline()))
 
@@ -29,6 +30,7 @@ for i in range(N-1,0,-1):
     complete_binary_tree[0],complete_binary_tree[i] = complete_binary_tree[i],complete_binary_tree[0]
     N= N-1
     heapify(0)
+
 
 for i in complete_binary_tree:
     print(i)
