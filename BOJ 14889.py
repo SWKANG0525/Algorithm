@@ -1,3 +1,7 @@
+# Author : Kang Ho Dong
+# Date : 2020 - 07 - 30
+# Title : BOJ 14889
+# Language : Python 3
 N = int(input())
 sequence_ls = []
 start_team_ls = [0] * N
