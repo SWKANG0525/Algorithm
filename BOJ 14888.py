@@ -5,14 +5,14 @@
 import operator
 
 max = -1000000001
-min = 1000000001
+ans_min = 1000000001
 N = int(input())
 sequence_ls = list(map(int, input().split()))
 operator_ls = list(map(int, input().split()))  # IDX 0 : plus 1 : minus 2 : multiply 3 : divide
 
 
 def backtrack(sum, n):
-    global max, min
+    global max, ans_min
 
     if n == N:
 
@@ -48,4 +48,4 @@ def backtrack(sum, n):
 
 backtrack(sequence_ls[0],1)
 print(max)
-print(min)
+print(ans_min)
