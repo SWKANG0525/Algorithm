@@ -25,6 +25,7 @@ n	lost	reserve	return
 3번 학생이 2번 학생이나 4번 학생에게 체육복을 빌려주면 학생 4명이 체육수업을 들을 수 있습니다.
 
 Note 1. Refresh Github Email
+Note 2. Refresh Github Name
  */
 
 import java.util.ArrayList;
