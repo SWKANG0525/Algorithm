@@ -33,6 +33,7 @@ Only one valid answer exists.
 from typing import List
 
 
+
 class Solution:
     def two_sum(self, nums: List[int], target: int) -> List[int]:
         hash_table = {}
