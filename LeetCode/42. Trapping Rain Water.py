@@ -44,4 +44,3 @@ class Solution:
                 water_volume += max_right_wall - height[right]
                 right -= 1
         return water_volume
-
