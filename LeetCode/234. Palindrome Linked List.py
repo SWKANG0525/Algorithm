@@ -20,19 +20,21 @@ class ListNode:
         self.val = val
         self.next = next
 
+
 class Solution:
     def isPalindrome(self, head: ListNode) -> bool:
         reverse_linked_list = None
         fast_pointer = slow_pointer = head
-        while fast_pointer:
+
+        while fast_pointer and fast_pointer.next:
             fast_pointer = fast_pointer.next.next
-            reverse_linked_list, reverse_linked_list.next = slow_pointer, reverse_linked_list
+            reverse_linked_list, reverse_linked_list.next, slow_pointer = slow_pointer, reverse_linked_list, slow_pointer.next
+
+        if fast_pointer:
             slow_pointer = slow_pointer.next
 
-        while slow_pointer and reverse_linked_list.val == slow_pointer.val:
+        while reverse_linked_list and reverse_linked_list.val == slow_pointer.val:
             slow_pointer = slow_pointer.next
             reverse_linked_list = reverse_linked_list.next
 
         return not reverse_linked_list
-
-
