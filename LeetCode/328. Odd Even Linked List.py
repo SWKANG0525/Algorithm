@@ -27,5 +27,21 @@ class ListNode:
         self.val = val
         self.next = next
 
+
 class Solution:
-    def oddEvenList(self, head: ListNode) -> ListNode:
+    def odd_even_list(self, head: ListNode) -> ListNode:
+        if head is None:
+            return None
+
+        odd_cursor = head
+        even_cursor = head.next
+        even_head = head.next
+
+        while odd_cursor.next and even_cursor.next:
+            odd_cursor.next = odd_cursor.next.next
+            even_cursor.next = even_cursor.next.next
+            odd_cursor = odd_cursor.next
+            even_cursor = even_cursor.next
+
+        odd_cursor.next = even_head
+        return head
