@@ -38,4 +38,17 @@ s consists of parentheses only '()[]{}'.
 
 class Solution:
     def isValid(self, s: str) -> bool:
-        pass
+        stack = []
+        parentheses_table = {
+            '(': ')',
+            '{': '}',
+            '[': ']'
+        }
+
+        for parentheses in s:
+            if parentheses in parentheses_table:
+                stack.append(parentheses)
+            elif parentheses != parentheses_table[stack.pop()]:
+                return False
+
+        return not len(stack)
