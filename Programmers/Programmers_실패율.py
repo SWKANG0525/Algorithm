@@ -67,4 +67,7 @@ def solution(N, stages):
 
 
 if __name__ == '__main__':
+    A, B = map(int, input().split())
+    print(A)
+    print(B)
     print(solution(5, [2, 1, 2, 6, 2, 4, 3, 3]))
