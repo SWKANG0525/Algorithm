@@ -24,16 +24,20 @@ numbers	target	return
 """
 
 answer = 0
-def DFS(numbers,sum,round,target):
+
+
+def DFS(numbers, sum, round, target):
     global answer
     if round == len(numbers):
         if target == sum:
             answer += 1
         return
     else:
-        DFS(numbers,sum+numbers[round],round+1,target)
-        DFS(numbers,sum+(numbers[round]*-1),round+1,target)
+        DFS(numbers, sum + numbers[round], round + 1, target)
+        DFS(numbers, sum + (numbers[round] * -1), round + 1, target)
+
+
 def solution(numbers, target):
     global answer
-    DFS(numbers,0,0,target)
+    DFS(numbers, 0, 0, target)
     return answer
