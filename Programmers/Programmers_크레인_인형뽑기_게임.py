@@ -36,8 +36,8 @@ def solution(board: List[List[int]], moves: List[int]) -> int:
     stack: List = []
     board_depth: int = len(board)
     answer: int = 0
-    # Moves 리스트 순회하여 뽑기 수행
 
+    # Moves 리스트 순회하여 뽑기 수행
     for move in moves:
         for height in range(board_depth):
             if board[height][move-1]:
