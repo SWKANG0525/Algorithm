@@ -75,4 +75,8 @@ def solution(orders: List[str], course: List[int]) -> List[str]:
 
 
 if __name__ == '__main__':
+    import bisect
+
+    mylist = [1, 2, 3, 7, 9, 11, 33]
+    print(bisect.bisect(mylist, 5))
     print(solution(["XYZ", "XWY", "WXA"], [2,3,4]))
