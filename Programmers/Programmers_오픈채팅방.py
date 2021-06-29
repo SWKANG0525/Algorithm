@@ -60,7 +60,7 @@ def solution(record: List[str]) -> List[str]:
     store_list: List[str] = []
     nick_table: defaultdict[str] = defaultdict(str)
     answer: List[str] = []
-
+    
     for msg in record:
         split_msg = msg.split(' ')
         store_list.append(split_msg[0] + " " + split_msg[1])
