@@ -21,7 +21,6 @@ def solution(name: str) -> int:
         char_idx = min(left_idx,right_idx)
         print(char_idx)
         min_direction = ""
-        # Case 5 : If char == 'A' -> Jump
 
         # Case 1 : Left Move & Up Move
         calc_table["LU"] = len(name) - char_idx + cursor + ord(name[char_idx]) - ord('A')
