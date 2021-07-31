@@ -34,6 +34,4 @@ def solution(citations: List[int]):
         h_idx_sum += h_idx_table[idx]
 
 
-
-
     return answer
