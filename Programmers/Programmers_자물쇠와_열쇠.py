@@ -22,11 +22,52 @@ key	lock	result
 key를 시계 방향으로 90도 회전하고, 오른쪽으로 한 칸, 아래로 한 칸 이동하면 lock의 홈 부분을 정확히 모두 채울 수 있습니다.
 """
 
-
-def solution(key, lock):
-    answer = True
-    return answer
+import copy
 
 
-if __name__ == '__main__':
-    pass
+# 1. Define Rotate Func
+def rotate(key):
+    N = len(key)
+    ret = [[0] * N for _ in range(N)]
+
+    for r in range(N):
+        for c in range(N):
+            ret[c][N - 1 - r] = key[r][c]
+
+    return ret
+
+
+# 5. Define Check Locked Func
+def is_locked(board_part, key, m_idx, n_idx, lock):
+    result = []
+    for key_m_idx in range(len(key)):
+        for key_n_idx in range(len(key)):
+            if key[key_m_idx][key_n_idx]:
+                board_part[m_idx + key_m_idx][n_idx + key_n_idx] += 1
+
+    for _ in range(len(lock)):
+        result.append(board_part[len(key) + _][len(key):len(lock) + len(key)])
+
+    for element in sum(result, []):
+        if element != 1:
+            return False
+    return True
+
+
+def solution(key, lock) -> bool:
+    # 2. Define Board for Exhaustive Search
+    board = [[0 for n in range(len(key) * 2 + len(lock))] for m in range(len(key) * 2 + len(lock))]
+
+    # 3. Create Lock Area
+    for _ in range(len(lock)):
+        board[len(key) + _][len(key):len(key) + len(lock)] = lock[_][:]
+
+    # 4. Exhaustive Search
+    for m_idx in range(len(board) - len(key)):
+        for n_idx in range(len(board) - len(key)):
+            for round_idx in range(4):
+                key = rotate(key)
+                if is_locked(copy.deepcopy(board), key, m_idx, n_idx, lock):
+                    return True
+
+    return False

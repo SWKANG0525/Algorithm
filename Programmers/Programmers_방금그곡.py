@@ -61,6 +61,7 @@ def solution(m: str, musicinfos: List[str]):
 
         rebase_list.append([musicinfo[2], music_time, music_sheet, insert_idx])
         insert_idx += 1
+
     # 2 부분 문자열 체크
 
     for rebase in rebase_list:
